@@ -1,0 +1,41 @@
+1 - Qual é o time que mais perdeu por temporada?
+
+CONSULTA:
+
+SELECT SEASON_ID, TEAM, G, W, L 
+FROM ranking 
+ORDER BY L DESC;
+
+-------------------------------------------------
+
+2 - Qual é o time mais novo? 
+
+CONSULTA:
+
+SELECT CITY, NICKNAME, YEAR_FOUNDED, OWNER
+FROM teams
+ORDER BY YEAR_FOUNDED DESC;
+
+-------------------------------------------------
+
+3 - Qual time teve mais Assistências?
+
+CONSULTA:
+
+SELECT TEAM_NAME_home, SUM(AST_home)
+FROM games
+group by TEAM_NAME_home
+ORDER BY SUM(AST_home) DESC;
+
+-------------------------------------------------
+
+4 - Qual é o time que fez mais rebotes em casa?
+
+CONSULTA:
+
+SELECT TEAM_NAME_home, SUM(REB_home)
+from games
+group by TEAM_NAME_home
+ORDER by sum(REB_home) DESC;
+
+-------------------------------------------------
